@@ -4,6 +4,8 @@ function genererContenu() {
   let qty = document.getElementById("qty");
   let titre = document.getElementById("titre");
   let texte = document.getElementById("contenu");
+  let bouton = document.getElementById("btnClass");
+
   demo.innerHTML = "";
 
   for(let i = 0; i < qty.value; i++){
@@ -15,6 +17,9 @@ function genererContenu() {
     p.textContent = texte.value + " " + i;
     demo.appendChild(p);
 
+    let btn = document.createElement("button");
+    btn.textContent = "Remplace ma classe";
+    demo.appendChild(btn);
   }
   
 }
@@ -33,5 +38,11 @@ function changerStyle() {
 function changerClassBoutons() {
   // Obtenir les éléments boutons et changer leur className pour celui qui est spécifié dans l'input
     let demo = document.getElementById("demo");
-let 
+    let bouton = document.getElementById("btnClass");
+    let demoBtn = demo.getElementsByTagName("button");
+
+    for(let button of demoBtn){
+      button.className = bouton.value;
+    }
+
 }
